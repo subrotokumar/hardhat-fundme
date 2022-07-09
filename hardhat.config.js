@@ -54,10 +54,13 @@ module.exports = {
             accounts: PRIVATE_KEY,
         },
     },
-    // gasReporter: {
-    //     enabled: process.env.COINMARKETCAP_API_KEY !== undefined,
-    //     currency: "USD",
-    // },
+    gasReporter: {
+        enabled: true,
+        currency: "USD",
+        outputFile: "gas-report.txt",
+        noColors: true,
+        coinmarketcap: process.env.COINMARKETCAP_API_KEY || "",
+    },
     etherscan: {
         apiKey: process.env.ETHERSCAN_API_KEY || "",
     },
