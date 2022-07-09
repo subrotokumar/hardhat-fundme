@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add _D @chainlink/contracts
+  C:\Program Files\nodejs\node.exe C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js format
 
 PATH: 
   C:\Users\subro\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\subro\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Cloudflare\Cloudflare WARP;C:\Users\subro\AppData\Local\Programs\Microsoft VS Code\Code.exe;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\Cloudflare\Cloudflare WARP;C:\Users\subro\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\subro\AppData\Local\Programs\Python\Python310;C:\Users\subro\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-17.0.1\bin;C:\Users\subro\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2021.3\bin;C:\src\flutter\bin;C:\Program Files\nodejs;C:\Users\subro\AppData\Local\Programs\Microsoft VS Code\Code.exe;C:\Users\subro\AppData\Local\GitHubDesktop\bin;C:\Program Files\BraveSoftware\Brave-Browser\Application;C:\Program Files\Bitwarden;C:\Program Files\Android\Android Studio\bin;C:\KMPlayer;C:\users\subro\.local\bin;C:\users\subro\appdata\local\packages\pythonsoftwarefoundation.python.3.10_qbz5n2kfra8p0\localcache\local-packages\python310\scripts;C:\Users\subro\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,17 +14,12 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/_D: Not found
-      at Request.params.callback [as _callback] (C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66138:18)
-      at Request.self.callback (C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
-      at Request.emit (node:events:527:28)
-      at Request.<anonymous> (C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
-      at Request.emit (node:events:527:28)
-      at IncomingMessage.<anonymous> (C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
-      at Object.onceWrapper (node:events:641:28)
-      at IncomingMessage.emit (node:events:539:35)
-      at endReadableNT (node:internal/streams/readable:1345:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  SyntaxError: C:\Users\subro\Desktop\x\Blockchain\hardhat-fund-me\package.json: Unexpected string in JSON at position 1035
+      at JSON.parse (<anonymous>)
+      at C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\subro\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -51,6 +46,13 @@ npm manifest:
       "prettier-plugin-solidity": "^1.0.0-beta.13",
       "solhint": "^3.3.6",
       "solidity-coverage": "^0.7.16"
+    },
+    "scripts": {
+        "test": "yarn hardhat test",
+        "test:staging": "yarn hardhat test --network rinkeby",
+        "lint": "yarn solhint constract/*.sol",
+        "lint:fix": "yarn solhint --fix constract/*.sol"
+        "format": "yarn prettier --write '**/*.{sol,js}'"
     }
   }
 
